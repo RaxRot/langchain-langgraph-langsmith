@@ -1,9 +1,10 @@
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
-
+import os
 load_dotenv()
 
-model = ChatOpenAI(model="gpt-6-luna")
+model_name = os.getenv("OPENAI_MODEL")
+model = ChatOpenAI(model=model_name)
 
 request = input("Ask me: ")
 
